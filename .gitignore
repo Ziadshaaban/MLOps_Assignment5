@@ -1,0 +1,7 @@
+venv/
+mlruns/
+mlartifacts/
+__pycache__/
+model_info.txt
+*.pyc
+ngrok.exe
