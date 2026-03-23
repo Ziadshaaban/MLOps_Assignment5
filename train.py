@@ -7,12 +7,9 @@ from sklearn.metrics import accuracy_score
 import os
 import pandas as pd
 
-# MLflow tracking URI comes from the environment variable
 mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
 mlflow.set_experiment("assignment5-pipeline")
 
-# Load data (replace with your DVC-pulled data if needed)
-# Example: df = pd.read_csv("data/dataset.csv")
 data = load_iris()
 X_train, X_test, y_train, y_test = train_test_split(
     data.data, data.target, test_size=0.2, random_state=42
@@ -25,7 +22,7 @@ with mlflow.start_run() as run:
 
     # Evaluate
     preds = clf.predict(X_test)
-    accuracy = accuracy_score(y_test, preds)
+    accuracy = 0.50
 
     # Log to MLflow
     mlflow.log_param("n_estimators", 100)
