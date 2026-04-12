@@ -22,7 +22,7 @@ with mlflow.start_run() as run:
 
     # Evaluate
     preds = clf.predict(X_test)
-    accuracy = 0.50
+    accuracy = accuracy_score(y_test, preds)
 
     # Log to MLflow
     mlflow.log_param("n_estimators", 100)
