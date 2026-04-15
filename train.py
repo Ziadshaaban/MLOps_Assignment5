@@ -1,4 +1,3 @@
-raise Exception("intentional failure for testing")
 import mlflow
 import mlflow.sklearn
 from sklearn.datasets import load_iris
